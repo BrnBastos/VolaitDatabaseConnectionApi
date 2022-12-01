@@ -36,16 +36,16 @@ namespace VolaitDatabaseConnectionApi.Controllers
             return cliente;
         }
 
-        // // EDITAR USUÁRIO
-        // [System.Web.Http.HttpPut]
-        // public void EditarUsuario([FromBody] UsuarioViewModel vmUsuario)
-        // {
-        //     if (vmUsuario == null)
-        //         throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NotFound));
+        // EDITAR USUÁRIO
+        [HttpPut]
+        public void UpdateCliente([FromBody] Cliente cliente)
+        {
+            if (cliente == null)
+                throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NotFound));
 
-        //     UsuarioDAO dao = new UsuarioDAO();
-        //     dao.editarUsuario(vmUsuario);
-        // }
+            ClienteDAO dao = new ClienteDAO();
+            dao.UpdateCliente(cliente);
+        }
 
         // POST: api/Cliente
         //[HttpPost]

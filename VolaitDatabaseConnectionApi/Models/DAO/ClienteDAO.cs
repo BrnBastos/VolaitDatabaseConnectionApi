@@ -30,17 +30,6 @@ namespace VolaitDatabaseConnectionApi.Models.DAO
             }
         }
 
-
-        public void UpdateSenha(Cliente cliente)
-        {
-            string updateQuery = string.Format("CALL spAlterSenhaCli('{0}', '{1}')", cliente.LoginCliente, cliente.SenhaCliente);
-
-            using (db = new Database())
-            {
-                db.CommandExecuter(updateQuery);
-            }
-        }
-
         public void UpdateCliente(Cliente cliente)
         {
             var updateQuery = "";
